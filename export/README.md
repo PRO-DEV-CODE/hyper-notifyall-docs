@@ -1,6 +1,6 @@
 # Export
 
-Hyper_Notifyall เปิดให้เรียก 31 export — 23 ตัวฝั่งผู้เล่น และ 8 ตัวฝั่งเซิร์ฟเวอร์ ทุกตัวเรียกได้จาก resource ไหนก็ได้โดยไม่ต้องประกาศ dependency
+Hyper_Notifyall เปิดให้เรียก 28 export — 20 ตัวฝั่งผู้เล่น และ 8 ตัวฝั่งเซิร์ฟเวอร์ ทุกตัวเรียกได้จาก resource ไหนก็ได้โดยไม่ต้องประกาศ dependency
 
 ## จะทำอะไร ใช้ตัวไหน
 
@@ -16,18 +16,17 @@ Hyper_Notifyall เปิดให้เรียก 31 export — 23 ตัว�
 | หลอดเพชรจับเวลา | `Progress` + `StopProgress` | ผู้เล่น | 11 resource — บัฟ คูลดาวน์ งานที่รอนาน |
 | ประกาศกลางจอ | `announcementNotify` | ผู้เล่น / เซิร์ฟเวอร์ | อีเวนต์ ตกปลา ยึดธง |
 | นับถอยหลังรีสตาร์ท/ลบรถ | `serverNotify` | ผู้เล่น | ปกติระบบสั่งเองตามตารางเวลา |
-| ไอคอนสถานะ buff/debuff | `AddStatusEffect` + `RemoveStatusEffect` | ผู้เล่น | ระบบสถานะตัวละคร |
 | การ์ดโปรไฟล์ผู้เล่น | `SendAlert` / `SendGlobalAlert` | ผู้เล่น / เซิร์ฟเวอร์ | แจ้งจับกุม แจ้งเข้าเซิร์ฟ |
 
 ## แยกตามหมวด
 
 - [แจ้งเตือนและไอเทม](notify.md) — `sendNotify` `sendMessageNotify` `phoneNotify` `phoneNotifyClose` `itemNotify`
 - [TextUI และหลอดโหลด](ui.md) — `showHelpNotify` `hideHelpNotify` `ShowTextUI3D` `RemoveTextUI3D` `HideTextUI3D` `progressBar` `stopProgressBar` `Progress` `StopProgress`
-- [ประกาศ สถานะ และการ์ดโปรไฟล์](system.md) — `announcementNotify` `serverNotify` `AddStatusEffect` `RemoveStatusEffect` `ClearStatusEffects` และ export การ์ดโปรไฟล์ทั้งหมด
+- [ประกาศและการ์ดโปรไฟล์](system.md) — `announcementNotify` `serverNotify` และ export การ์ดโปรไฟล์ทั้งหมด
 
 ## รายการทั้งหมด
 
-### ฝั่งผู้เล่น (23)
+### ฝั่งผู้เล่น (20)
 
 | Export | หน้าที่ |
 | --- | --- |
@@ -47,9 +46,6 @@ Hyper_Notifyall เปิดให้เรียก 31 export — 23 ตัว�
 | `Progress` | หลอดเพชรจับเวลา (มี callback) |
 | `StopProgress` | ยกเลิกหลอดเพชร |
 | `announcementNotify` | ประกาศกลางจอ |
-| `AddStatusEffect` | เพิ่มไอคอนสถานะ |
-| `RemoveStatusEffect` | ลบไอคอนสถานะ |
-| `ClearStatusEffects` | ล้างสถานะทั้งหมด |
 | `alertNotify` | การ์ดโปรไฟล์ (ส่ง table เต็ม) |
 | `ShowAlert` | การ์ดโปรไฟล์ (ตั้งชื่อและรูปเอง) |
 | `SendAlert` | ยิงการ์ดโปรไฟล์ของตัวเองให้ทุกคน |
@@ -86,6 +82,5 @@ TriggerEvent('Hyper_Notifyall:showHelpNotify', { ... })
 
 ```lua
 TriggerClientEvent('Hyper_Notifyall:sendNotify', src, { ... })
-TriggerClientEvent('Hyper_Notifyall:status:add', src, 'bleed', { ... })
-TriggerClientEvent('Hyper_Notifyall:status:remove', src, 'bleed')
+TriggerClientEvent('Hyper_Notifyall:itemNotify', src, { ... })
 ```

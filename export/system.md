@@ -1,4 +1,4 @@
-# ประกาศ สถานะ และการ์ดโปรไฟล์
+# ประกาศและการ์ดโปรไฟล์
 
 ## announcementNotify
 
@@ -63,60 +63,6 @@ exports['Hyper_Notifyall']:serverNotify('delete', 180, 180)
 {% hint style="warning" %}
 export ตัวนี้แค่ **แสดงการ์ด** เฉย ๆ ไม่ได้สั่งรีสตาร์ทหรือลบรถจริง การลงมือจริงอยู่ฝั่งเซิร์ฟเวอร์ทั้งหมด สั่งผ่านคำสั่ง `reserver` / `delvehicle` หรือปล่อยให้ตารางเวลาทำเอง
 {% endhint %}
-
-## AddStatusEffect
-
-ไอคอนสถานะ buff/debuff ในแถวล่างจอ
-
-![แถวสถานะ](../.gitbook/assets/13_status_effects.png)
-
-```lua
-exports['Hyper_Notifyall']:AddStatusEffect('bleed', {
-    icon = 'mdi:water',
-    label = 'เลือดไหล',
-    color = '#e0413f',
-    duration = 8000,
-    kind = 'debuff',
-    stacks = 2,
-})
-```
-
-| ค่า | ชนิด | ค่าเริ่มต้น | ความหมาย |
-| --- | --- | --- | --- |
-| id (พารามิเตอร์แรก) | string | — | ชื่อเฉพาะของสถานะ ใช้ตอนสั่งลบ ส่งซ้ำ id เดิม = แก้ของเดิม |
-| `icon` | string | — | ชื่อไอคอนจากชุด iconify (เช่น `mdi:water`) หรือข้อความสั้น ๆ |
-| `image` | string | — | พาธรูปแทนไอคอน เช่น `nui://Hyper_Damage/html/img/bleed.png` |
-| `label` | string | id | ข้อความตอนเอาเมาส์ชี้ |
-| `color` | string | สีธีม | สีกรอบและวงแหวน |
-| `duration` | number | `0` | มิลลิวินาที — `0` หรือไม่ใส่ = ค้างถาวร โชว์สัญลักษณ์ ∞ |
-| `kind` | string | `'buff'` | `'buff'` หรือ `'debuff'` |
-| `stacks` | number | `1` | มากกว่า 1 จะโชว์ xN |
-
-## RemoveStatusEffect
-
-```lua
-exports['Hyper_Notifyall']:RemoveStatusEffect('bleed')
-```
-
-## ClearStatusEffects
-
-```lua
-exports['Hyper_Notifyall']:ClearStatusEffects()
-```
-
-สถานะทั้งหมดถูกล้างให้เองเมื่อผู้เล่นตาย สถานะถาวรที่ต้องคงอยู่ resource เจ้าของต้องใส่กลับเอง
-
-สั่งจากฝั่งเซิร์ฟเวอร์
-
-```lua
-TriggerClientEvent('Hyper_Notifyall:status:add', src, 'armorset', {
-    icon = 'mdi:shield-star',
-    label = 'เซ็ตโบนัสเกราะ',
-    color = '#ffd700',
-})
-TriggerClientEvent('Hyper_Notifyall:status:remove', src, 'armorset')
-TriggerClientEvent('Hyper_Notifyall:status:clear', src)
-```
 
 ## การ์ดโปรไฟล์
 

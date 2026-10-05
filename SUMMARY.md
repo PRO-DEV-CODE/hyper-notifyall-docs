@@ -10,4 +10,4 @@
 * [Export](export/README.md)
   * [แจ้งเตือนและไอเทม](export/notify.md)
   * [TextUI และหลอดโหลด](export/ui.md)
-  * [ประกาศ สถานะ และการ์ดโปรไฟล์](export/system.md)
+  * [ประกาศและการ์ดโปรไฟล์](export/system.md)

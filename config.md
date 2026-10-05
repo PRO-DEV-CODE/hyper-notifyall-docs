@@ -178,7 +178,6 @@ set steam_webApiKey "STEAM_KEY"
 | `html/css/palette.css` | ชุดสีกลาง — token หลักและบล็อกธีมทั้ง 6 แก้ที่เดียวเปลี่ยนทั้ง UI |
 | `html/css/style.css` | โครงสร้างและขนาดของทุกการ์ด |
 | `html/css/custom.css` | ชั้นเชื่อม — แปลงตัวแปรของ `style.css` ให้ไปอ่าน token จาก `palette.css` |
-| `html/css/status.css` | HUD แถวสถานะ |
 
 {% hint style="warning" %}
 แก้สีที่ `palette.css` เท่านั้น การแก้สีลงใน `style.css` ตรง ๆ จะทำให้การสลับธีมไม่มีผลกับจุดนั้น
