@@ -62,6 +62,6 @@ exports['Hyper_Notifyall']:sendNotify({
 
 - [ฟีเจอร์หลัก](features.md) — ทุกระบบพร้อมค่าใน config ที่คุมมัน
 - [การตั้งค่า](config.md) — ไฟล์ config ทั้ง 4 ไฟล์และค่าที่ปรับบ่อย
-- [หน้าจอ UI](ui-screens.md) — ภาพจริงทั้ง 15 โหมด
+- [หน้าจอ UI](ui-screens.md) — ภาพจริงทั้ง 14 โหมด
 - [ธีมสี](themes.md) — 7 ธีมพร้อมตารางสี
 - [Export](export/README.md) — ตารางว่าจะทำอะไรต้องใช้ export ตัวไหน
